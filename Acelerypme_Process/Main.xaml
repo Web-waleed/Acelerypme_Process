@@ -1,0 +1,193 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1145.6000000000001,2126.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Str_FilePath" />
+      <Variable x:TypeArguments="x:String" Name="Str_ReadTXT" />
+      <Variable x:TypeArguments="x:String" Name="name" />
+      <Variable x:TypeArguments="x:String" Name="Correo_Electrónico" />
+      <Variable x:TypeArguments="x:String" Name="Teléfono_Móvil" />
+      <Variable x:TypeArguments="x:String" Name="Nombre_o_razón_social_de_la_empresa" />
+      <Variable x:TypeArguments="x:String" Name="NIF_NIE" />
+      <Variable x:TypeArguments="x:String" Name="Comunidad" />
+      <Variable x:TypeArguments="x:String" Name="Provincia" />
+      <Variable x:TypeArguments="x:String" Name="Localidad" />
+      <Variable x:TypeArguments="x:String" Name="Código_postal" />
+      <Variable x:TypeArguments="x:String" Name="Código_CNAE" />
+      <Variable x:TypeArguments="x:String" Name="Company_Employees" />
+      <Variable x:TypeArguments="x:String" Name="Established_Year" />
+      <Variable x:TypeArguments="x:String" Name="gender" />
+      <Variable x:TypeArguments="x:String" Name="verifycationEmail" />
+      <Variable x:TypeArguments="x:String" Name="URL" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Prompt_usertoinput_Datatextasa.txtFilePath - Invoke Workflow File (Acelera_Prompt_User_to_input_Data_Text\Prompt_usertoinput_Datatextasa.txtFilePath.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Acelera_Prompt_User_to_input_Data_Text\Prompt_usertoinput_Datatextasa.txtFilePath.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_FilePath">[Str_FilePath]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ReadTextFile - Invoke Workflow File (Acelera_Prompt_User_to_input_Data_Text\ReadTextFile.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Acelera_Prompt_User_to_input_Data_Text\ReadTextFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_FilePath">[Str_FilePath]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_ReadTXT">[Str_ReadTXT]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Seperate_TXTFile - Invoke Workflow File (Acelera_Prompt_User_to_input_Data_Text\Seperate_TXTFile.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Acelera_Prompt_User_to_input_Data_Text\Seperate_TXTFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="In_readTXT">[Str_ReadTXT]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_name">[name]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Correo_Electrónico">[Correo_Electrónico]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Teléfono_Móvil">[Teléfono_Móvil]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Nombre_o_razón_social_de_la_empresa">[Nombre_o_razón_social_de_la_empresa]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_NIF_NIE">[NIF_NIE]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Comunidad">[Comunidad]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Provincia">[Provincia]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Localidad">[Localidad]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Código_postal">[Código_postal]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Código_CNAE">[Código_CNAE]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Company_Employees">[Company_Employees]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_Established_Year">[Established_Year]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_gender">[gender]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OpenAcelera - Invoke Workflow File (Acelera\OpenAcelera.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Acelera\OpenAcelera.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Go_toRegisterPage - Invoke Workflow File (Acelera\Go_toRegisterPage.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Acelera\Go_toRegisterPage.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FillRegesterFormFirstPage - Invoke Workflow File (Acelera\FillRegesterFormFirstPage.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Acelera\FillRegesterFormFirstPage.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_name">[name]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Correo_Electrónico">[Correo_Electrónico]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Teléfono_Móvil">[Teléfono_Móvil]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Nombre_o_razón_social_de_la_empresa">[Nombre_o_razón_social_de_la_empresa]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_gender">[gender]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FillRegesterForm2ndPage - Invoke Workflow File (Acelera\FillRegesterForm2ndPage.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Acelera\FillRegesterForm2ndPage.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Nombre_o_razón_social_de_la_empresa">[Nombre_o_razón_social_de_la_empresa]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_NIF_NIE">[NIF_NIE]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Comunidad">[Comunidad]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Provincia">[Provincia]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Localidad">[Localidad]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Código_postal">[Código_postal]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Código_CNAE">[Código_CNAE]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Company_Employees">[Company_Employees]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Established_Year">[Established_Year]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FillRegesterForm3ndPage - Invoke Workflow File (Acelera\FillRegesterForm3ndPage.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Acelera\FillRegesterForm3ndPage.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Open_YOPmail.com - Invoke Workflow File (YOPmail\Open_YOPmail.com.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="YOPmail\Open_YOPmail.com.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Email">[Correo_Electrónico]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="extract_URL - Invoke Workflow File (YOPmail\extract_URL.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="YOPmail\extract_URL.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_verifycationEmail">[URL]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FillURLinTab - Invoke Workflow File (Acelera\FillURLinTab.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Acelera\FillURLinTab.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_verifycationEmail">[URL]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="write_password - Invoke Workflow File (Acelera\write_password.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Acelera\write_password.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_NIF">[NIF_NIE]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+  </Sequence>
+</Activity>

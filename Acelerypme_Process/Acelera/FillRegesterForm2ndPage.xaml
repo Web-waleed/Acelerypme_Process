@@ -1,0 +1,1310 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Nombre_o_razón_social_de_la_empresa" Type="InArgument(x:String)" />
+    <x:Property Name="in_NIF_NIE" Type="InArgument(x:String)" />
+    <x:Property Name="in_Comunidad" Type="InArgument(x:String)" />
+    <x:Property Name="in_Provincia" Type="InArgument(x:String)" />
+    <x:Property Name="in_Localidad" Type="InArgument(x:String)" />
+    <x:Property Name="in_Código_postal" Type="InArgument(x:String)" />
+    <x:Property Name="in_Código_CNAE" Type="InArgument(x:String)" />
+    <x:Property Name="in_Company_Employees" Type="InArgument(x:String)" />
+    <x:Property Name="in_Established_Year" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1145.6000000000001,6644" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:UiElement" Name="outputElement">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">NApplicationCard_1</x:String>
+            <x:String x:Key="SourcePropertyName">OutUiElement</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="PDD section: II.5.3&#xA;Pre Condition : gender radio Exists&#xA;Post Condition : Regester page 3 exists&#xA;Arguments: in_Nombre_o_razón_social_de_la_empresa , in_NIF_NIE . in_Comunidad , in_Provincia , in_Localidad ,in_Código_postal , in_Código_CNAE , in_Company_Employees , in_Established_Year&#xA;" DisplayName="Sequence || Click on Regístrate ahora" sap:VirtualizedContainerService.HintSize="913.6,6620.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:DateTime" Name="StartData" />
+        <Variable x:TypeArguments="x:String" Name="XamlFileName">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String" xml:space="preserve"> Regester page 3</Literal>
+          </Variable.Default>
+        </Variable>
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="880,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[XamlFileName+&quot;Is Started&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <Assign sap:VirtualizedContainerService.HintSize="880,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[StartData]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[Now]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="880,5976" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+        <ui:RetryScope.ActivityBody>
+          <ActivityAction>
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="825.6,5768" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="792,5708" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="571.2,5430.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Pre condition" sap:VirtualizedContainerService.HintSize="537.6,966.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="bool_PreConditionExist" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:UiElementExists DisplayName="Element Exists || ¿Cuáles son los datos de contacto de tu pyme?" Exists="[bool_PreConditionExist]" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bc16b871-492f-47f7-9606-e24dcf3b9eec" InformativeScreenshot="4468d40cea0c9c92858e822e4512ccbd" Selector="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;&lt;webctrl tag='H1' aaname='¿Cuáles son los datos de contacto de tu pyme?' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[Not bool_PreConditionExist]" sap:VirtualizedContainerService.HintSize="449.6,735.2" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="var_PostCondition" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Pre Condition Failed&quot;]" />
+                            <Throw Exception="[New System.Exception(XamlFileName + &quot; Failed &quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Post Condition Exist&quot;]" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="537.6,3446.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Registro pyme  Acelera pyme" sap:VirtualizedContainerService.HintSize="504,3354.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[outputElement]" ScopeGuid="190a0dfe-b691-433c-a871-0c2100b23617" Version="V2">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="470.4,3114.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nombre o razón social d…'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="436.8,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Text="[in_Nombre_o_razón_social_de_la_empresa]" Version="V4">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="cb0c4114-f06e-474c-b37c-bdd3c124d38b" ContentHash="Zx4HnhPAAkCHE8aQIuPGVA" DesignTimeRectangle="614, 421, 694, 53" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Nombre o razón social de la empresa' /&gt;" Guid="f9be49e4-a3bc-48c7-8251-95d88f5745f2" InformativeScreenshot="00b16ac68871024ea3587f7a8b75d624.png" IsResponsive="True" Reference="eltEAWyTPUiS-Enjz2JHbQ/Lxz9PjepvkO8WbKqo_6RDQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="cb0c4114-f06e-474c-b37c-bdd3c124d38b" CvTextArea="612, 377, 387, 22" CvTextArgument="Nombre o razón social de la empresa" CvType="Text" DesignTimeRectangle="614, 373, 386, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Nombre o razón social de la empresa' check:innerText='Nombre o razón social de la empresa' /&gt;" Guid="aaacfa51-d550-4a5c-87b9-4dbe73d29260" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'NIF/NIE'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="436.8,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="DebuggerApi" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Text="[in_NIF_NIE]" Version="V4">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="4358b39d-db91-4ea0-8354-87395ba58282" ContentHash="whB7LxMCjkCWLmoblHvKYA" DesignTimeRectangle="614, 562, 463, 53" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='nif' tag='INPUT' type='text' aaname='NIF/NIE' /&gt;" Guid="33027bea-efb0-4329-9b1e-520d66d19323" InformativeScreenshot="aff634716695aff68e6426bc3f6f295a.png" IsResponsive="True" Reference="eltEAWyTPUiS-Enjz2JHbQ/6YGVScnIdEmCQ_ytbPLCDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="4358b39d-db91-4ea0-8354-87395ba58282" CvTextArea="612, 516, 94, 22" CvTextArgument="NIF/NIE *" CvType="Text" DesignTimeRectangle="614, 514, 98, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  NIF/NIE&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='NIF/NIE' check:innerText='NIF/NIE' /&gt;" Guid="31c6c117-e751-4777-a3a3-55eb6c82575e" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                    <uix:TargetAnchorable.PointOffset>
+                                      <uix:PointOffset X="3" Y="-5" />
+                                    </uix:TargetAnchorable.PointOffset>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <uix:NSelectItem DisplayName="Select Item 'Comunidad/Provincia/Loc…'" sap:VirtualizedContainerService.HintSize="436.8,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_Comunidad.Trim]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                <uix:NSelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="20">
+                                    <x:String>Andalucía</x:String>
+                                    <x:String>Aragón</x:String>
+                                    <x:String>Asturias, Principado de</x:String>
+                                    <x:String>Balears, Illes</x:String>
+                                    <x:String>Canarias</x:String>
+                                    <x:String>Cantabria</x:String>
+                                    <x:String>Castilla - La Mancha</x:String>
+                                    <x:String>Castilla y León</x:String>
+                                    <x:String>Cataluña</x:String>
+                                    <x:String>Ceuta</x:String>
+                                    <x:String>Comunitat Valenciana</x:String>
+                                    <x:String>Extremadura</x:String>
+                                    <x:String>Galicia</x:String>
+                                    <x:String>Madrid, Comunidad de</x:String>
+                                    <x:String>Melilla</x:String>
+                                    <x:String>Murcia, Región de</x:String>
+                                    <x:String>Navarra, Comunidad Foral de</x:String>
+                                    <x:String>País Vasco</x:String>
+                                    <x:String>Rioja, La</x:String>
+                                    <x:String>- Seleccionar -</x:String>
+                                  </scg:List>
+                                </uix:NSelectItem.Items>
+                                <uix:NSelectItem.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="1cdf53e6-4058-42cb-b704-9fcb5583e722" ContentHash="2sexCKi41ke_a7PaHv_uvQ" DesignTimeRectangle="614, 755, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='SELECT' innertext='AndalucíaAragónAsturias, Principado deBalears, IllesCanariasCantabriaCastilla - La ManchaCastilla y LeónCataluñaCeutaComunitat ValencianaExtremaduraGaliciaMadrid, Comunidad deMelillaMurcia, Región deNavarra, Comunidad Foral dePaís VascoRioja, La- Seleccionar -' /&gt;" Guid="23c9a03d-3d7d-4efa-a974-7fe35b2127ce" ImageBase64="" InformativeScreenshot="4a7ee4fd6a9499bd0c5c21bfa851db78.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/eoIK8fKDdUq5aF7-Tf914w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="1cdf53e6-4058-42cb-b704-9fcb5583e722" CvTextArea="611, 715, 353, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 712, 356, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="0cba59e6-8a09-4a28-afd9-c0dfb90c1a62" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NSelectItem.Target>
+                              </uix:NSelectItem>
+                              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="436.8,122.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,420.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <TryCatch.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="str_VisibleText" />
+                                </TryCatch.Variables>
+                                <TryCatch.Try>
+                                  <uix:NSelectItem DisplayName="Select Item 'Cantabria'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[in_Provincia.Trim]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="1">
+                                        <x:String>Melilla</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="fc7ebd46-04db-44e2-be1f-6ccaffc111eb" ContentHash="gZudhQhxXkS9DsApR2RgHg" DesignTimeRectangle="614, 828, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Provincia*' /&gt;&lt;webctrl tag='SELECT' innertext='*' /&gt;" FuzzyAccuracy="0.9" Guid="3b873b81-01ff-45c9-83cc-1cb77b3f62b6" ImageBase64="" InformativeScreenshot="a6d1354f1ac2103894a967ddcbc55a16.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/LeNVtlIwiEKl2PCHpq_OcA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="fc7ebd46-04db-44e2-be1f-6ccaffc111eb" CvTextArea="611, 715, 353, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 712, 356, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="3630fe5e-defd-403e-b3bd-279b2f8fe8f3" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="467.2,598.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                                        <Sequence.Variables>
+                                          <Variable x:TypeArguments="x:String" Name="strarr_VisibleText" />
+                                        </Sequence.Variables>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get Attribute 'Comunidad/Provincia/Loc…'" sap:VirtualizedContainerService.HintSize="433.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" Result="[str_VisibleText]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                          <uix:NGetAttributeGeneric.Target>
+                                            <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="07413823-5072-40cc-b463-176017bcd81a" ContentHash="kz_7tFJarEmOqeO_InGucQ" DesignTimeRectangle="614, 828, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Provincia*' /&gt;&lt;webctrl aria-labelledby='edit-commmunity-province-location--*' tag='SELECT' /&gt;" Guid="edb1bb6e-f560-449f-8f95-913aeed01901" InformativeScreenshot="a749eb5962981d7d5661a8d5d8595762.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/1NNGkaPOHEmceyptzoHCJQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target CVScreenId="07413823-5072-40cc-b463-176017bcd81a" CvTextArea="611, 715, 353, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 712, 356, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="78b3f967-3d31-4c67-9b02-cbacf85f2228" SearchSteps="FuzzySelector, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NGetAttributeGeneric.Target>
+                                        </uix:NGetAttributeGeneric>
+                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[in_Provincia]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[str_VisibleText.Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uix:NSelectItem DisplayName="Select Item 'Cantabria'" sap:VirtualizedContainerService.HintSize="433.6,182.4" sap2010:WorkflowViewState.IdRef="NSelectItem_17" Item="[in_Provincia.Trim]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                          <uix:NSelectItem.Items>
+                                            <scg:List x:TypeArguments="x:String" Capacity="1">
+                                              <x:String>Melilla</x:String>
+                                            </scg:List>
+                                          </uix:NSelectItem.Items>
+                                          <uix:NSelectItem.Target>
+                                            <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="fc7ebd46-04db-44e2-be1f-6ccaffc111eb" ContentHash="gZudhQhxXkS9DsApR2RgHg" DesignTimeRectangle="614, 828, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='Provincia*' /&gt;&lt;webctrl tag='SELECT' innertext='*' /&gt;" FuzzyAccuracy="0.9" Guid="3b873b81-01ff-45c9-83cc-1cb77b3f62b6" ImageBase64="" InformativeScreenshot="a6d1354f1ac2103894a967ddcbc55a16.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/LeNVtlIwiEKl2PCHpq_OcA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target CVScreenId="fc7ebd46-04db-44e2-be1f-6ccaffc111eb" CvTextArea="611, 715, 353, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 712, 356, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="3630fe5e-defd-403e-b3bd-279b2f8fe8f3" SearchSteps="FuzzySelector, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NSelectItem.Target>
+                                        </uix:NSelectItem>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="436.8,122.4" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,420.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch.Variables>
+                                  <Variable x:TypeArguments="x:String" Name="str_visiblLocadad" />
+                                </TryCatch.Variables>
+                                <TryCatch.Try>
+                                  <uix:NSelectItem DisplayName="Select Item 'Comunidad/Provincia/Loc…'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="[in_Localidad.Trim]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                    <uix:NSelectItem.Items>
+                                      <scg:List x:TypeArguments="x:String" Capacity="50">
+                                        <x:String>Alfoz de Lloredo</x:String>
+                                        <x:String>Ampuero</x:String>
+                                        <x:String>Anievas</x:String>
+                                        <x:String>Arenas de Iguña</x:String>
+                                        <x:String>Argoños</x:String>
+                                        <x:String>Arnuero</x:String>
+                                        <x:String>Arredondo</x:String>
+                                        <x:String>Astillero, El</x:String>
+                                        <x:String>Bárcena de Cicero</x:String>
+                                        <x:String>Bárcena de Pie de Concha</x:String>
+                                        <x:String>Bareyo</x:String>
+                                        <x:String>Cabezón de la Sal</x:String>
+                                        <x:String>Cabezón de Liébana</x:String>
+                                        <x:String>Cabuérniga</x:String>
+                                        <x:String>Camaleño</x:String>
+                                        <x:String>Camargo</x:String>
+                                        <x:String>Campoo de Enmedio</x:String>
+                                        <x:String>Campoo de Yuso</x:String>
+                                        <x:String>Cartes</x:String>
+                                        <x:String>Castañeda</x:String>
+                                        <x:String>Castro-Urdiales</x:String>
+                                        <x:String>Cieza</x:String>
+                                        <x:String>Cillorigo de Liébana</x:String>
+                                        <x:String>Colindres</x:String>
+                                        <x:String>Comillas</x:String>
+                                        <x:String>Corrales de Buelna, Los</x:String>
+                                        <x:String>Corvera de Toranzo</x:String>
+                                        <x:String>Entrambasaguas</x:String>
+                                        <x:String>Escalante</x:String>
+                                        <x:String>Guriezo</x:String>
+                                        <x:String>Hazas de Cesto</x:String>
+                                        <x:String>Hermandad de Campoo de Suso</x:String>
+                                        <x:String>Herrerías</x:String>
+                                        <x:String>Lamasón</x:String>
+                                        <x:String>Laredo</x:String>
+                                        <x:String>Liendo</x:String>
+                                        <x:String>Liérganes</x:String>
+                                        <x:String>Limpias</x:String>
+                                        <x:String>Luena</x:String>
+                                        <x:String>Marina de Cudeyo</x:String>
+                                        <x:String>Mazcuerras</x:String>
+                                        <x:String>Medio Cudeyo</x:String>
+                                        <x:String>Meruelo</x:String>
+                                        <x:String>Miengo</x:String>
+                                        <x:String>Miera</x:String>
+                                        <x:String>Molledo</x:String>
+                                        <x:String>Noja</x:String>
+                                        <x:String>Penagos</x:String>
+                                        <x:String>Peñarrubia</x:String>
+                                        <x:String>Pesaguero</x:String>
+                                      </scg:List>
+                                    </uix:NSelectItem.Items>
+                                    <uix:NSelectItem.Target>
+                                      <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="2b5f10b5-1719-4d31-aa20-e68247de4dda" ContentHash="w1NEJrrpUk66GB5pnFDwwQ" CvElementArea="611, 649, 468, 57" CvType="InputBox" DesignTimeRectangle="614, 651, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FuzzyAccuracy="0.91" FuzzySelectorArgument="&lt;webctrl aria-labelledby='edit-commmunity-province-location--pRVQK6yLzoc-shs-0-2-label' tag='SELECT' type='' class='shs-select form-select form-element form-element--type-select required' aaname='' /&gt;" Guid="be0327bd-95ea-49c3-b717-463bd8008bc2" ImageBase64="" InformativeScreenshot="6f31c33093638276bb771bd667e5b38f.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/44A5lX5HMECTZ2FYXZrtXw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="2b5f10b5-1719-4d31-aa20-e68247de4dda" CvTextArea="611, 465, 354, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 462, 356, 30" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="b242fa5d-02ea-4913-ba91-39abf368f36a" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NSelectItem.Target>
+                                  </uix:NSelectItem>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="467.2,598.4" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleInnerText" DisplayName="Get Attribute 'Abengibre'" sap:VirtualizedContainerService.HintSize="433.6,240" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_5" Result="[str_visiblLocadad]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                          <uix:NGetAttributeGeneric.Target>
+                                            <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="9b36c746-24a3-497c-8cf8-6d9d53d4124d" ContentHash="UG9Y94S10km5y1-hui-lDg" DesignTimeRectangle="614, 651, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl parentid='edit-pyme-data*' tag='DIV' innertext='Localidad*' /&gt;&lt;webctrl aria-labelledby='edit-commmunity-province-location*' tag='SELECT' /&gt;" Guid="e5eb0e00-c132-480a-a615-d13e15855a07" ImageBase64="" InformativeScreenshot="ba667048b09d01a7d5551d81f1babdce.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/i3nWMyZ3AkqKXcaOtoQWZQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                          </uix:NGetAttributeGeneric.Target>
+                                        </uix:NGetAttributeGeneric>
+                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[in_Localidad]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[str_visiblLocadad.Split(Environment.NewLine.ToCharArray)(0)]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                        <uix:NSelectItem DisplayName="Select Item 'Comunidad/Provincia/Loc…'" sap:VirtualizedContainerService.HintSize="433.6,182.4" sap2010:WorkflowViewState.IdRef="NSelectItem_18" Item="[in_Localidad.Trim]" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                          <uix:NSelectItem.Items>
+                                            <scg:List x:TypeArguments="x:String" Capacity="50">
+                                              <x:String>Alfoz de Lloredo</x:String>
+                                              <x:String>Ampuero</x:String>
+                                              <x:String>Anievas</x:String>
+                                              <x:String>Arenas de Iguña</x:String>
+                                              <x:String>Argoños</x:String>
+                                              <x:String>Arnuero</x:String>
+                                              <x:String>Arredondo</x:String>
+                                              <x:String>Astillero, El</x:String>
+                                              <x:String>Bárcena de Cicero</x:String>
+                                              <x:String>Bárcena de Pie de Concha</x:String>
+                                              <x:String>Bareyo</x:String>
+                                              <x:String>Cabezón de la Sal</x:String>
+                                              <x:String>Cabezón de Liébana</x:String>
+                                              <x:String>Cabuérniga</x:String>
+                                              <x:String>Camaleño</x:String>
+                                              <x:String>Camargo</x:String>
+                                              <x:String>Campoo de Enmedio</x:String>
+                                              <x:String>Campoo de Yuso</x:String>
+                                              <x:String>Cartes</x:String>
+                                              <x:String>Castañeda</x:String>
+                                              <x:String>Castro-Urdiales</x:String>
+                                              <x:String>Cieza</x:String>
+                                              <x:String>Cillorigo de Liébana</x:String>
+                                              <x:String>Colindres</x:String>
+                                              <x:String>Comillas</x:String>
+                                              <x:String>Corrales de Buelna, Los</x:String>
+                                              <x:String>Corvera de Toranzo</x:String>
+                                              <x:String>Entrambasaguas</x:String>
+                                              <x:String>Escalante</x:String>
+                                              <x:String>Guriezo</x:String>
+                                              <x:String>Hazas de Cesto</x:String>
+                                              <x:String>Hermandad de Campoo de Suso</x:String>
+                                              <x:String>Herrerías</x:String>
+                                              <x:String>Lamasón</x:String>
+                                              <x:String>Laredo</x:String>
+                                              <x:String>Liendo</x:String>
+                                              <x:String>Liérganes</x:String>
+                                              <x:String>Limpias</x:String>
+                                              <x:String>Luena</x:String>
+                                              <x:String>Marina de Cudeyo</x:String>
+                                              <x:String>Mazcuerras</x:String>
+                                              <x:String>Medio Cudeyo</x:String>
+                                              <x:String>Meruelo</x:String>
+                                              <x:String>Miengo</x:String>
+                                              <x:String>Miera</x:String>
+                                              <x:String>Molledo</x:String>
+                                              <x:String>Noja</x:String>
+                                              <x:String>Penagos</x:String>
+                                              <x:String>Peñarrubia</x:String>
+                                              <x:String>Pesaguero</x:String>
+                                            </scg:List>
+                                          </uix:NSelectItem.Items>
+                                          <uix:NSelectItem.Target>
+                                            <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="2b5f10b5-1719-4d31-aa20-e68247de4dda" ContentHash="w1NEJrrpUk66GB5pnFDwwQ" CvElementArea="611, 649, 468, 57" CvType="InputBox" DesignTimeRectangle="614, 651, 463, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FuzzyAccuracy="0.91" FuzzySelectorArgument="&lt;webctrl aria-labelledby='edit-commmunity-province-location--pRVQK6yLzoc-shs-0-2-label' tag='SELECT' type='' class='shs-select form-select form-element form-element--type-select required' aaname='' /&gt;" Guid="be0327bd-95ea-49c3-b717-463bd8008bc2" ImageBase64="" InformativeScreenshot="6f31c33093638276bb771bd667e5b38f.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/44A5lX5HMECTZ2FYXZrtXw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target CVScreenId="2b5f10b5-1719-4d31-aa20-e68247de4dda" CvTextArea="611, 465, 354, 21" CvTextArgument="Comunidad/Provincia/Localidad *" CvType="Text" DesignTimeRectangle="614, 462, 356, 30" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl aria-label='  Comunidad/Provincia/Localidad&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Comunidad/Provincia/Localidad' check:innerText='Comunidad/Provincia/Localidad' /&gt;" Guid="b242fa5d-02ea-4913-ba91-39abf368f36a" SearchSteps="FuzzySelector, CV" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NSelectItem.Target>
+                                        </uix:NSelectItem>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Código postal'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="436.8,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="DebuggerApi" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Text="[in_Código_postal.Trim]" Version="V4">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="1152426c-379b-4eb9-b53b-66bf80ac92c7" ContentHash="ohyFqy_0NEqIsyjVzyJ_Lw" DesignTimeRectangle="614, 573, 463, 53" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl name='postal_code' tag='INPUT' type='text' placeholder='Escribe el código postal' /&gt;" Guid="7b7d266d-d9c4-4e47-81ef-cff081400007" InformativeScreenshot="798cef163a6a4d6a3a80792699b8be86.png" IsResponsive="True" Reference="eltEAWyTPUiS-Enjz2JHbQ/fJR4Fmzkxkmfu7I-i5zYcw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="1152426c-379b-4eb9-b53b-66bf80ac92c7" CvTextArea="611, 529, 161, 23" CvTextArgument="Código postal *" CvType="Text" DesignTimeRectangle="614, 525, 164, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Código postal&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Código postal' check:innerText='Código postal' /&gt;" Guid="46a07872-9236-4799-9755-20f676d7c78c" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'GRUPO A Agricultura, g…'" sap:VirtualizedContainerService.HintSize="436.8,56.8" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="18af1294-e8ae-407f-bb62-6eded1d0ef11" ContentHash="jXXThAweqk2Vl-SsPVKiXw" DesignTimeRectangle="614, 356, 395, 51" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl class='chosen-single' tag='A' /&gt;" Guid="57261967-2a43-4c57-8032-6786ed4b90a9" InformativeScreenshot="027fab0e6c78b6b6e132a72d0d2d94d3.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/nT8HtAFKcEWbEnpMpEfaFA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="18af1294-e8ae-407f-bb62-6eded1d0ef11" CvTextArea="611, 315, 156, 25" CvTextArgument="Código CNAE *" CvType="Text" DesignTimeRectangle="614, 312, 159, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Código CNAE&amp;#xA;' tag='LABEL' type='' class='js-form-required form-required' aaname='Código CNAE' check:innerText='Código CNAE' /&gt;" Guid="5926dd1a-3beb-4a37-8403-faa0f95da983" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NClick>
+                              <ui:IfElseIfV2 Condition="[in_Código_CNAE.Contains(in_Código_CNAE)]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="436.8,56.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                                <ui:IfElseIfV2.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,276.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'GRUPO D Suministro de …'" sap:VirtualizedContainerService.HintSize="382.4,216.8" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" ContentHash="SR6FKxOmEEGEySHjTrYRyA" DesignTimeRectangle="621, 704, 361, 69" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="&lt;webctrl class='active-result' parentid='edit_cnae_code__UHgarTdeMDg_chosen' tag='LI' innertext='GRUPO D: *' /&gt;" Guid="3abc5fed-4916-493b-bb7a-3c0ab0e875b8" ImageBase64="" InformativeScreenshot="9b9f737e54ae1a48ab051e8fa98271cc.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/scpQD0foGEWcqxBGOf9UGw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Else>
+                                <ui:IfElseIfV2.ElseIfs>
+                                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                </ui:IfElseIfV2.ElseIfs>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:IfElseIfV2.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,276.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'GRUPO A Agricultura, g…(1)'" sap:VirtualizedContainerService.HintSize="382.4,216.8" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" ContentHash="GwjtrHu-50-FWIAWSlY_Qw" DesignTimeRectangle="621, 657, 361, 31" DesignTimeScaleFactor="1.25" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl class='active-result' tag='LI' aaname='{0}: *' /&gt;&quot;, in_Código_CNAE)]" Guid="71a2d34d-1d83-40e6-93f2-a9ad3a58fdad" ImageBase64="" InformativeScreenshot="b169780066363d9532bc8bb66e67be57.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/gvE6bj8SP0OcfoEYIDJVcw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Then>
+                              </ui:IfElseIfV2>
+                              <ui:IfElseIfV2 Condition="[CInt(in_Company_Employees) &gt;= 1]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="436.8,56.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_4">
+                                <ui:IfElseIfV2.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,240.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NSelectItem DisplayName="Select Item 'Soy autónomoa'" sap:VirtualizedContainerService.HintSize="382.4,180.8" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="No" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                      <uix:NSelectItem.Items>
+                                        <scg:List x:TypeArguments="x:String" Capacity="2">
+                                          <x:String>No</x:String>
+                                          <x:String>Sí</x:String>
+                                        </scg:List>
+                                      </uix:NSelectItem.Items>
+                                      <uix:NSelectItem.Target>
+                                        <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="b43982df-4271-47e7-86e4-bbc83b3cdb23" ContentHash="xyFbZhMUn0iHXVDOrZ88fA" DesignTimeRectangle="614, 720, 926, 54" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-17' tag='SELECT' innertext='NoSí' /&gt;" Guid="578c172d-01c4-41e4-ad05-857aa06d7f2d" ImageBase64="" InformativeScreenshot="12a17c3c97a1da015e7c211a175c31fc.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/OXI7X4bfxUWphIJztJbcAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CVScreenId="b43982df-4271-47e7-86e4-bbc83b3cdb23" CvTextArea="611, 679, 174, 24" CvTextArgument="Soy autónomo/a" CvType="Text" DesignTimeRectangle="614, 677, 170, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Soy autónomo/a&amp;#xA;' tag='LABEL' type='' class='' aaname='Soy autónomo/a' check:innerText='Soy autónomo/a' /&gt;" Guid="7b38f3db-2197-4b24-8fcf-0f30fa5ac56a" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NSelectItem.Target>
+                                    </uix:NSelectItem>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Else>
+                                <ui:IfElseIfV2.ElseIfs>
+                                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
+                                </ui:IfElseIfV2.ElseIfs>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:IfElseIfV2.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,240.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NSelectItem DisplayName="Select Item 'Soy autónomo/a'" sap:VirtualizedContainerService.HintSize="382.4,180.8" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="Sí" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                      <uix:NSelectItem.Items>
+                                        <scg:List x:TypeArguments="x:String" Capacity="2">
+                                          <x:String>No</x:String>
+                                          <x:String>Sí</x:String>
+                                        </scg:List>
+                                      </uix:NSelectItem.Items>
+                                      <uix:NSelectItem.Target>
+                                        <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="b43982df-4271-47e7-86e4-bbc83b3cdb23" ContentHash="xyFbZhMUn0iHXVDOrZ88fA" DesignTimeRectangle="614, 720, 926, 54" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-17' tag='SELECT' innertext='NoSí' /&gt;" Guid="578c172d-01c4-41e4-ad05-857aa06d7f2d" ImageBase64="" InformativeScreenshot="12a17c3c97a1da015e7c211a175c31fc.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/OXI7X4bfxUWphIJztJbcAQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CVScreenId="b43982df-4271-47e7-86e4-bbc83b3cdb23" CvTextArea="611, 679, 174, 24" CvTextArgument="Soy autónomo/a" CvType="Text" DesignTimeRectangle="614, 677, 170, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Soy autónomo/a&amp;#xA;' tag='LABEL' type='' class='' aaname='Soy autónomo/a' check:innerText='Soy autónomo/a' /&gt;" Guid="7b38f3db-2197-4b24-8fcf-0f30fa5ac56a" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NSelectItem.Target>
+                                    </uix:NSelectItem>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Then>
+                              </ui:IfElseIfV2>
+                              <Flowchart sap:VirtualizedContainerService.HintSize="436.8,56.8" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <av:Point x:Key="ShapeLocation">275,35</av:Point>
+                                    <av:Size x:Key="ShapeSize">49.6,49.6</av:Size>
+                                    <av:PointCollection x:Key="ConnectorLocation">299.8,84.6 299.8,114.6 300,114.6 300,130</av:PointCollection>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Flowchart.StartNode>
+                                  <x:Reference>__ReferenceID9</x:Reference>
+                                </Flowchart.StartNode>
+                                <FlowDecision x:Name="__ReferenceID9" Condition="[Cint(in_Company_Employees)&lt;3]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">270,130</av:Point>
+                                      <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">270,160 239.99999999999994,160 239.99999999999994,174.7 130.4,174.7</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">330,160 410,160 410,200</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">20,139.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Menos de 3 trabajadores'" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                        <uix:NClick.Target>
+                                          <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="49a5bdbb-5375-40df-bb42-030de79affac" ContentHash="-Zj5eDBdrE22B7j2IL6Tcg" DesignTimeRectangle="614, 519, 285, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='radio' tag='LABEL' aaname='Menos de 3 trabajadores' /&gt;" Guid="835275be-a44a-4581-9819-9dac406971d9" InformativeScreenshot="96fb1ca844a4f60a734b40068ee9a51e.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/nOZNSTpNMUWI-IVIVNLveg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                        </uix:NClick.Target>
+                                        <uix:NClick.VerifyOptions>
+                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                            <uix:VerifyExecutionOptions.Retry>
+                                              <InArgument x:TypeArguments="x:Boolean" />
+                                            </uix:VerifyExecutionOptions.Retry>
+                                            <uix:VerifyExecutionOptions.Timeout>
+                                              <InArgument x:TypeArguments="x:Double" />
+                                            </uix:VerifyExecutionOptions.Timeout>
+                                          </uix:VerifyExecutionOptions>
+                                        </uix:NClick.VerifyOptions>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </uix:NClick>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowDecision x:Name="__ReferenceID2" Condition="[Cint(in_Company_Employees)&gt;=3 AndAlso Cint(in_Company_Employees)&lt;=9]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">380,200</av:Point>
+                                          <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">380,230 80.2,230 80.2,245</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">410,260 410,290 430,290 430,320</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">25,245</av:Point>
+                                              <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Entre 3 y 9 trabajadores'" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="84aed0a2-384b-4ed8-bc17-28412ee0a428" ContentHash="sJU-dgCt6Eay6ne9DOwu1A" DesignTimeRectangle="614, 569, 276, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='radio' tag='LABEL' aaname='Entre 3 y 9 trabajadores' /&gt;" Guid="e2ac9c9b-d4a2-4710-9fd0-ca9d949d74f1" InformativeScreenshot="d8079a161be8cf93d239f6cca876c2dc.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/kovG09XfS0eD2EuLieQ9Dg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                          </uix:NClick>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <FlowDecision x:Name="__ReferenceID3" Condition="[Cint(in_Company_Employees)&gt;=10 AndAlso Cint(in_Company_Employees)&lt;=49]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <av:Point x:Key="ShapeLocation">400,320</av:Point>
+                                              <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                              <av:PointCollection x:Key="TrueConnector">400,350 369.99999999999994,350 369.99999999999994,360.2 135.4,360.2</av:PointCollection>
+                                              <av:PointCollection x:Key="FalseConnector">430,380 430,410 450,410 450,430</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <FlowDecision.True>
+                                            <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">25,325</av:Point>
+                                                  <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Entre 10 y 49 trabajado…'" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                                <uix:NClick.Target>
+                                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="0188264d-75a2-4985-9312-ecd5b01b9819" ContentHash="R-Ejdt4vxU2PLG1Hw4qI5A" DesignTimeRectangle="614, 619, 299, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='radio' tag='LABEL' aaname='Entre 10 y 49 trabajadores' /&gt;" Guid="c3f2cd17-d4db-4dd9-a3e3-18c19b8c8f2c" InformativeScreenshot="2eaa2b58513221d6dbeda0c9446adcec.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/EcXf_mnAhUS71ycmcmTuBA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                </uix:NClick.Target>
+                                                <uix:NClick.VerifyOptions>
+                                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                    <uix:VerifyExecutionOptions.Retry>
+                                                      <InArgument x:TypeArguments="x:Boolean" />
+                                                    </uix:VerifyExecutionOptions.Retry>
+                                                    <uix:VerifyExecutionOptions.Timeout>
+                                                      <InArgument x:TypeArguments="x:Double" />
+                                                    </uix:VerifyExecutionOptions.Timeout>
+                                                  </uix:VerifyExecutionOptions>
+                                                </uix:NClick.VerifyOptions>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </uix:NClick>
+                                            </FlowStep>
+                                          </FlowDecision.True>
+                                          <FlowDecision.False>
+                                            <FlowDecision x:Name="__ReferenceID5" Condition="[Cint(in_Company_Employees)&gt;=50 AndAlso Cint(in_Company_Employees)&gt;=249]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">420,430</av:Point>
+                                                  <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                                  <av:PointCollection x:Key="TrueConnector">420,460 389.99999999999994,460 389.99999999999994,440.2 135.4,440.2</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">450,490 450,520 440,520 440,530</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">25,405</av:Point>
+                                                      <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Entre 50 y 249 trabajad…'" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="ae09fc94-4101-4035-971a-4f11512acd2e" ContentHash="C8DOOcNHeUW2jTjMQfrYGw" DesignTimeRectangle="614, 669, 314, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-role='radio' tag='LABEL' aaname='Entre 50 y 249 trabajadores' /&gt;" Guid="ce795741-432c-44e6-ba4d-c61790715008" InformativeScreenshot="ef26ac7683d9e1f0c26e91af4c12ad99.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/8PTORGjiF0WjGnCr6kid3g" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                    <uix:NClick.VerifyOptions>
+                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                        <uix:VerifyExecutionOptions.Retry>
+                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                        </uix:VerifyExecutionOptions.Retry>
+                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                      </uix:VerifyExecutionOptions>
+                                                    </uix:NClick.VerifyOptions>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </uix:NClick>
+                                                </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <FlowDecision x:Name="__ReferenceID7" Condition="[Cint(in_Company_Employees)&gt;=250]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <av:Point x:Key="ShapeLocation">410,530</av:Point>
+                                                      <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                                      <av:PointCollection x:Key="TrueConnector">410,560 379.99999999999994,560 379.99999999999994,520.2 135.4,520.2</av:PointCollection>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <FlowDecision.True>
+                                                    <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <av:Point x:Key="ShapeLocation">25,485</av:Point>
+                                                          <av:Size x:Key="ShapeSize">110.4,70.4</av:Size>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '250 O más trabajadores'" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                                        <uix:NClick.Target>
+                                                          <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="96d4a4da-0e24-4028-b427-ccc61c12afd4" ContentHash="01rFMXn8oU6Sd6S1w-MLNw" DesignTimeRectangle="614, 719, 273, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aria-label='  250 o más trabajadores&amp;#xA;' aria-role='radio' tag='LABEL' /&gt;" Guid="ef88d8ef-b7c4-48c5-9e3f-24c029654b54" InformativeScreenshot="7acdc7f03716cff72e0de3a5addc9d67.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/RSGPUkly90OK8AvRPCSbbQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                                        </uix:NClick.Target>
+                                                        <uix:NClick.VerifyOptions>
+                                                          <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                            <uix:VerifyExecutionOptions.Retry>
+                                                              <InArgument x:TypeArguments="x:Boolean" />
+                                                            </uix:VerifyExecutionOptions.Retry>
+                                                            <uix:VerifyExecutionOptions.Timeout>
+                                                              <InArgument x:TypeArguments="x:Double" />
+                                                            </uix:VerifyExecutionOptions.Timeout>
+                                                          </uix:VerifyExecutionOptions>
+                                                        </uix:NClick.VerifyOptions>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </uix:NClick>
+                                                    </FlowStep>
+                                                  </FlowDecision.True>
+                                                </FlowDecision>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowDecision.False>
+                                        </FlowDecision>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                                <x:Reference>__ReferenceID0</x:Reference>
+                                <x:Reference>__ReferenceID1</x:Reference>
+                                <x:Reference>__ReferenceID2</x:Reference>
+                                <x:Reference>__ReferenceID3</x:Reference>
+                                <x:Reference>__ReferenceID4</x:Reference>
+                                <x:Reference>__ReferenceID5</x:Reference>
+                                <x:Reference>__ReferenceID6</x:Reference>
+                                <x:Reference>__ReferenceID7</x:Reference>
+                                <x:Reference>__ReferenceID8</x:Reference>
+                              </Flowchart>
+                              <ui:IfElseIfV2 Condition="[(2024-Cint(in_Established_Year))&lt;5]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="436.8,56.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_6">
+                                <ui:IfElseIfV2.Else>
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89.6" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Else>
+                                <ui:IfElseIfV2.ElseIfs>
+                                  <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                    <ui:IfElseIfBlock BlockType="ElseIf" Condition="[(2024-Cint(in_Established_Year))&gt;=5 AndAlso (2024-Cint(in_Established_Year))&lt;=10]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_5">
+                                      <ui:IfElseIfBlock.Then>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,240.8" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NSelectItem DisplayName="Select Item 'Inicio de la actividad'" sap:VirtualizedContainerService.HintSize="382.4,180.8" sap2010:WorkflowViewState.IdRef="NSelectItem_12" Item="Entre 5 y 10 años" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                            <uix:NSelectItem.Items>
+                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                <x:String>- Ninguno -</x:String>
+                                                <x:String>Últimos 5 años</x:String>
+                                                <x:String>Entre 5 y 10 años</x:String>
+                                                <x:String>Más de 10 años</x:String>
+                                              </scg:List>
+                                            </uix:NSelectItem.Items>
+                                            <uix:NSelectItem.Target>
+                                              <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" ContentHash="-6CAMDxmbUO3z4gK3AeFZQ" DesignTimeRectangle="614, 456, 694, 54" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-18' tag='SELECT' aaname='Inicio de la actividad' /&gt;" Guid="b1c9589a-2516-405e-a79c-491c832c7552" ImageBase64="" InformativeScreenshot="60dcd074a0a99d0207531a807dc912bb.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/HgJFQbJ4U0yMvkWPThTbcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" CvTextArea="611, 417, 219, 20" CvTextArgument="Inicio de la actividad" CvType="Text" DesignTimeRectangle="614, 414, 216, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Inicio de la actividad&amp;#xA;' tag='LABEL' type='' class='' aaname='Inicio de la actividad' check:innerText='Inicio de la actividad' /&gt;" Guid="4533ce35-c007-4584-8074-edd8bcabfc6c" SearchSteps="FuzzySelector, CV" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:NSelectItem.Target>
+                                          </uix:NSelectItem>
+                                        </Sequence>
+                                      </ui:IfElseIfBlock.Then>
+                                    </ui:IfElseIfBlock>
+                                    <ui:IfElseIfBlock BlockType="ElseIf" Condition="[(2024-Cint(in_Established_Year))&gt;10]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_6">
+                                      <ui:IfElseIfBlock.Then>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,240.8" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NSelectItem DisplayName="Select Item 'Inicio de la actividad'" sap:VirtualizedContainerService.HintSize="382.4,180.8" sap2010:WorkflowViewState.IdRef="NSelectItem_13" Item="Más de 10 años" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                            <uix:NSelectItem.Items>
+                                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                                <x:String>- Ninguno -</x:String>
+                                                <x:String>Últimos 5 años</x:String>
+                                                <x:String>Entre 5 y 10 años</x:String>
+                                                <x:String>Más de 10 años</x:String>
+                                              </scg:List>
+                                            </uix:NSelectItem.Items>
+                                            <uix:NSelectItem.Target>
+                                              <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" ContentHash="-6CAMDxmbUO3z4gK3AeFZQ" DesignTimeRectangle="614, 456, 694, 54" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-18' tag='SELECT' aaname='Inicio de la actividad' /&gt;" Guid="b1c9589a-2516-405e-a79c-491c832c7552" ImageBase64="" InformativeScreenshot="60dcd074a0a99d0207531a807dc912bb.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/HgJFQbJ4U0yMvkWPThTbcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" CvTextArea="611, 417, 219, 20" CvTextArgument="Inicio de la actividad" CvType="Text" DesignTimeRectangle="614, 414, 216, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Inicio de la actividad&amp;#xA;' tag='LABEL' type='' class='' aaname='Inicio de la actividad' check:innerText='Inicio de la actividad' /&gt;" Guid="4533ce35-c007-4584-8074-edd8bcabfc6c" SearchSteps="FuzzySelector, CV" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:NSelectItem.Target>
+                                          </uix:NSelectItem>
+                                        </Sequence>
+                                      </ui:IfElseIfBlock.Then>
+                                    </ui:IfElseIfBlock>
+                                  </sc:BindingList>
+                                </ui:IfElseIfV2.ElseIfs>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:IfElseIfV2.Then>
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,240.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NSelectItem DisplayName="Select Item 'Inicio de la actividad'" sap:VirtualizedContainerService.HintSize="382.4,180.8" sap2010:WorkflowViewState.IdRef="NSelectItem_11" Item="Últimos 5 años" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                      <uix:NSelectItem.Items>
+                                        <scg:List x:TypeArguments="x:String" Capacity="4">
+                                          <x:String>- Ninguno -</x:String>
+                                          <x:String>Últimos 5 años</x:String>
+                                          <x:String>Entre 5 y 10 años</x:String>
+                                          <x:String>Más de 10 años</x:String>
+                                        </scg:List>
+                                      </uix:NSelectItem.Items>
+                                      <uix:NSelectItem.Target>
+                                        <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" ContentHash="-6CAMDxmbUO3z4gK3AeFZQ" DesignTimeRectangle="614, 456, 694, 54" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-18' tag='SELECT' aaname='Inicio de la actividad' /&gt;" Guid="b1c9589a-2516-405e-a79c-491c832c7552" ImageBase64="" InformativeScreenshot="60dcd074a0a99d0207531a807dc912bb.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/HgJFQbJ4U0yMvkWPThTbcQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CVScreenId="1cea7a80-fbbc-4db1-bb9e-48d1d0d81f32" CvTextArea="611, 417, 219, 20" CvTextArgument="Inicio de la actividad" CvType="Text" DesignTimeRectangle="614, 414, 216, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  Inicio de la actividad&amp;#xA;' tag='LABEL' type='' class='' aaname='Inicio de la actividad' check:innerText='Inicio de la actividad' /&gt;" Guid="4533ce35-c007-4584-8074-edd8bcabfc6c" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NSelectItem.Target>
+                                    </uix:NSelectItem>
+                                  </Sequence>
+                                </ui:IfElseIfV2.Then>
+                              </ui:IfElseIfV2>
+                              <uix:NSelectItem DisplayName="Select Item '¿Cómo nos has conocido?'" sap:VirtualizedContainerService.HintSize="436.8,189.6" sap2010:WorkflowViewState.IdRef="NSelectItem_16" Item="Eventos" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                <uix:NSelectItem.Items>
+                                  <scg:List x:TypeArguments="x:String" Capacity="8">
+                                    <x:String>- Ninguno -</x:String>
+                                    <x:String>Eventos</x:String>
+                                    <x:String>Recomendado por terceros</x:String>
+                                    <x:String>Prensa</x:String>
+                                    <x:String>Correo electrónico</x:String>
+                                    <x:String>Web</x:String>
+                                    <x:String>Redes sociales</x:String>
+                                    <x:String>Otros</x:String>
+                                  </scg:List>
+                                </uix:NSelectItem.Items>
+                                <uix:NSelectItem.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="ea91a38e-7062-4904-9d90-36f2f4c24c11" ContentHash="bxVJwvxE90at7iZi0Yjb2A" DesignTimeRectangle="614, 759, 694, 53" DesignTimeScaleFactor="1.25" ElementType="DropDown" FullSelectorArgument="&lt;webctrl aria-labelledby='i4t-id-19' tag='SELECT' aaname='¿Cómo nos has conocido?' /&gt;" Guid="36460b22-3937-4b0d-89b8-2bd96976e77c" ImageBase64="" InformativeScreenshot="eb9bb898327f7819d4919ce15652a75d.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/-OSd6yDYxUGZlohTTEplew" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target CVScreenId="ea91a38e-7062-4904-9d90-36f2f4c24c11" CvTextArea="611, 719, 274, 22" CvTextArgument="¿Cómo nos has conocido?" CvType="Text" DesignTimeRectangle="614, 716, 270, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aria-label='  ¿Cómo nos has conocido?&amp;#xA;' tag='LABEL' type='' class='' aaname='¿Cómo nos has conocido?' check:innerText='¿Cómo nos has conocido?' /&gt;" Guid="25e7bc3c-c6e0-4fd4-8673-29c71f0974da" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NSelectItem.Target>
+                              </uix:NSelectItem>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Consentimiento expreso …'" sap:VirtualizedContainerService.HintSize="436.8,225.6" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="0fbc8fc5-b625-4356-a49e-e72dd4fc4613" ContentHash="L8H_vtaM4kGphK1dROMHQw" DesignTimeRectangle="654, 730, 541, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Consentimiento expreso para el tratamiento de datos' tag='STRONG' /&gt;" Guid="2eaf191b-c8d9-4371-990f-0ea4cca68c96" InformativeScreenshot="8e961d1ddd03c8cc4fe9b8e55231bb8d.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/eXSqYl7T-UO0mWFrS6mJDw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continuar(1)'" sap:VirtualizedContainerService.HintSize="436.8,218.4" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="190a0dfe-b691-433c-a871-0c2100b23617" Version="V4">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="acelerapyme.gob.es/registro-pyme" CVScreenId="93bf536d-e18b-4665-a615-ba923e85f3d6" ContentHash="KiGDQls81EC_9I-3Zx2E4A" DesignTimeRectangle="1392, 775, 148, 55" DesignTimeScaleFactor="1.25" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Continuar' /&gt;" Guid="e60efbac-ad0a-4456-a84b-a14edd90b574" InformativeScreenshot="d11b50d8c49ec4a6a5230d646b3c5eda.png" Reference="eltEAWyTPUiS-Enjz2JHbQ/p0LLFB0KwUq3MQh-wzv3IQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" ContentHash="psVqUn0Xs0WDd8nm4yigrw" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAdjSURBVHhe7ZtdaBRXFIBFJAQxkyEEkSIiUkSKSJAiIkWCBBFnN1mKSPEpFBGRUIIP0geRUKQPEiQPsntnK4mUICEUESlFRIKIFBERCRKkhCASRERCEJEgBfudmbPJJnsnOxs36262Bz7iz73nnnPu3J9zZrKu0tKc8H+FWXgPn5QLbjLbDfu02doVnK3PAOBcOxzG2VH4CP+q85+aPf8h3IHT2nztCc6fkFnG4dvzji8EYBqm4Lw2X3uCo/1gYHze8YUAzMLbZs8MuInMVvhKu60dwdGn8AJH3y1yfhFmFOfb4TvtVtuCIxtcL71RwLkJJ+G/wtH8zW8xnrnV7GVSkFAVtS0EoFVntJ0AyM5vd1xxPH/S8bI3m7zssKqoban7AOBQG1xT5mxO50Obj/Aept0Um2FAeqOqqz1hNvfJjIYEZ7/V8ULMDM5vV2ovABjtMHOtTsKkcHxKWbj4FIF+752kOaNsV7W1I25XerPMHjP5o83BYnBazDlJlk1Im6qtHXE6zR44zEyetzlYDALwEW4rB9zUYIObGtqg6qtfmLWeYPYS/l2bg8Wgn/ycUb7HedftGtqk6qtf6jIAGLk+MBQweliNj771xee6m/D74LgOVZ3yfwAS/gboFjD6IY/x4px/pXj+BDyAizpUdQqON4DMVB+GPytwZKV4/muQWsEVHao6BWMbQao9wsvA+HIg6XNQK/D/cJPZb5T1Omz1CMaS8pLvh5Rj7S/lkVSUlOq5E2BMAzgYuJl1/0r5sMR4K7SbE2z/Z0EKKr1Kgw7/5QXnd8msYNQpsBkehQRJnBLiBExOlSdKow7/5aXuA4AxKbgHD8Bm+CLID2SDfAR3IPdIT4O1fR5ypMpygcxBN5HZD1vUjC8nGHQcZBYLq70WWPOT/JSA3ZQnR5+eEk+NzBGtNG1VMyovDL7N9dI7SXnP4dRbDBMsxhYwBpfgZ5wPjjX+LMGTZRCraCJZJvwMe9WcygsB2CuzQAAu24xchhGd+ZSqWkcAZfnMxj0RaDcsyVZT0hxSFZUXxzMJ6IbfbUZakDUsM5zG+cOwX1URAHMDJtD1Oq99JARgDO7Sh0wxvdFNZSq/KTpe9pLW+mT9Ww1dgrwQkcpwj6qYlyYvwzIyA3A/r30MzHmtG1b+TVJdBoCBGnRAqffJeWwxyg7OZdXJdlU3L+iTErjovGjrGwW6WAqBzl5VtbpS9wFwkqYVzgeEFxqrYTacZCYF7bBN1c2L25VplM2MAJykrRyJE/l9o8AG8g7zDEbc1NAmZfUyRY6eLUGtL6z3vbEZFUknx2b49LiqrkBoJ5cquST9Pd9vWYzcHeSKPJarRkH5M0VRCo1OMvs1jt8PMcu85p5Hsr1pgQDskJcly73qon0HyDcE17R/MeRY/dDs+Y9dzz+glP9NEs5z1g65zcnsXgaUiAtxyl1yO5QZFSJnPiduwt8tlyTa9oBNnx3Pf4HjvUqLqiufuMnfWoBNKtvObL4TGDhOAORi86fiqLpIwfmdcIy2EgTRH2cMCcBL6FNaVV35hJnp0FrflYLBl+epzKgS+7bG3aKFvnJnEIrnB/LmOawbCjtUTfmk7gPQ7JmfUCyV3n8KBrcju7MsE0l5nYCEH/t4IifYxCY7qBQ/bj2OxPDbAglWD+MdY7zdqu7zBaXnQIqd8o2P3Yh8vCAAMnujqqIkaUoEAZALjjC1SHdxJM2WJ+7zU2VRAvtRKkeTzGjcaq9sflNslrfgSMl4phOMIoG3jRHFdTbrNHSqGysXHqPjEk2U3loySDFk1p7gjLzevlAqTZ75BccHlVLfMTzE+TE4qW6sXFB2FmTzKzFLC56ASZx5DMMl45nrcEcp7caZ8J+zF8h1+pzrcfFKpFd+L0CJFC4l3Y1VqKguzLDWDQ+oO6ULiuovAHRo0Y5S7yv18asaWErjYd3QH1DX4kndB4ANZCcMKHEyvqqEAEjOQiZqnpCBbgnJFH+n6HjZPWGtL6j3xXllVeWYV1qHEKJTZbcrI+Vlh6gdwvFxpfg9vOoxb9ykOapEZ4o4H37cmDQn7IpqlllJ5JToRKm5E+c7M98SsdMWJZGwxuZgFmboO10hrLZEIPvYgLLLTQ1KdaswMWPHPBXW+oyc/TZFVmg/DiQtmcu502O1IQBxP6qQzVB+5qpYR6WyBYXfHNZtAPiLI9DwSnhsxKz2hieEHDWDQbE0md2R+/WY1YaAjzDuDYibKufKa30kd5LgLfx+okZEPm68ChKluCmvtJOcP53ToSpXXXhSr4ZPq/88z544XJLsFg6qKgLg+UcEZvQvGvBomVhHH7PwSJYLnMX5RkFVrro4SXMMfpDxbbZF4vn3YATOqKogAEE5mX+Uz1bsHS0w+CgMNCVMxT9h1UuNvEqTT3Kt9llZ+OiyX1Vx/Hn+BeUBj9RMfEw/G18vdKiqignOB1dbmQBskX1LPs2z2LgYfJzkcief3va7R7OOIOsp96pLlkDuJUZxkqZDZ6L8dfiYgt3davuI1cYowgC0CXUegGzbf90Dn5m0ebaGAAAAAElFTkSuQmCC" InformativeScreenshot="b7bb6f968856cc53391c680d9c3d36be.jpg" Reference="eltEAWyTPUiS-Enjz2JHbQ/IEJ_9aQkrE6sb-cgf8zMuw" Selector="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;" Title="Registro pyme | Acelera pyme" Url="https://www.acelerapyme.gob.es/registro-pyme" Version="V1" />
+                        </uix:NApplicationCard.TargetApp>
+                      </uix:NApplicationCard>
+                    </Sequence>
+                    <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Post condition" sap:VirtualizedContainerService.HintSize="537.6,957.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:Boolean" Name="bool_PostConditionExist" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:UiElementExists DisplayName="Element Exists 'H1  i4t-id-14'" Exists="[bool_PostConditionExist]" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="76b5b61c-420b-4e98-bc4f-05102af57087" InformativeScreenshot="5d48427231ad13644e8f4ffa22cac560" Selector="&lt;html app='chrome.exe' title='Registro pyme | Acelera pyme' /&gt;&lt;webctrl tag='H3' aaname='Datos de contacto aportados: ' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[Not bool_PostConditionExist]" sap:VirtualizedContainerService.HintSize="449.6,735.2" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="var_PostCondition" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Post Condition Failed&quot;]" />
+                            <Throw Exception="[New System.Exception(XamlFileName + &quot; Failed &quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Post Condition Exist&quot;]" />
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="758.4,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[exception.Message]" />
+                        <Throw Exception="[New System.Exception(XamlFileName +&quot;-&quot;+exception.Source+&quot;-&quot;+exception.Message)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                  <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="758.4,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="416,348" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[exception.Message]" />
+                        <Throw Exception="[New BusinessRuleException(XamlFileName +&quot;-&quot;+exception.Source+&quot;-&quot;+exception.Message)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </ActivityAction>
+        </ui:RetryScope.ActivityBody>
+        <ui:RetryScope.Condition>
+          <ActivityFunc x:TypeArguments="x:Boolean" />
+        </ui:RetryScope.Condition>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:RetryScope>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="880,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[XamlFileName + &quot;IS Ended : &quot; + (Now - StartData).Seconds.ToString]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+    </Sequence>
+  </Sequence>
+</Activity>
